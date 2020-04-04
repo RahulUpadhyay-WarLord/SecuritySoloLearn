@@ -5,13 +5,19 @@ public class SecuritySoloLearn {
 		Scanner sc = new Scanner(System.in);
 		String input = sc.nextLine();
 		System.out.println(input);
-		char [] signs = input.toCharArray();
+		//char [] signs = input.toCharArray();
 		int money = input.indexOf('$');
 		int thief = input.indexOf('T');
 		System.out.println("money: " + money + ", thief: " + thief);
 		String sub = subStr(input, money, thief);
 		System.out.println(sub);
-
+		String ret = "";
+		if (sub.contains("G")) {
+			ret = "quiet";
+		} else {
+			ret = "ALARM";
+		}
+		System.out.println(ret);
 	}
 
 	static String subStr(String in, int mon, int thi) {
